@@ -1,0 +1,21 @@
+{% extends 'animals/base.html' %}
+
+{% block title %}{{ page_title }} {% endblock %}
+{% block heading %}{{ page_title }}{% endblock %}
+
+{% block content %}
+
+<p>Welcome to the Zoo Animal Management System.</p>
+
+<p>
+    The zoo currently has <strong>{{ total_animals }}</strong> animal(s) on record.
+    Of these, <strong>{{ captive_count }}</strong> were born in captivity and
+    <strong>{{ wild_count }}</strong> were born in the wild.
+</p>
+
+<ul>
+    <li><a href="{% url 'animals:animal-list' %}">Browse all animals</a></li>
+    <li><a href="{% url 'animals:animal-create' %}">Add a new animal</a></li>
+    <li><a href="{% url 'animals:animal-search' %}">Search animals</a></li>
+</ul>
+{% endblock %}

@@ -1,0 +1,22 @@
+{% extends 'animals/base.html' %}
+
+{% block title %}Search Animals{% endblock %}
+
+{% block heading %}Search the Zoo{% endblock %}
+
+{% block content %}
+<form method="get" action="{% url 'animals:animal-search' %}">
+    <input type="text" name="q" placeholder="Search by name..." value="{{ request.GET.q }}">
+    <button type="submit">Search</button>
+</form>
+
+<hr>
+
+<ul>
+    {% for animal in animals %}
+        <li>{{ animal.name }} ({{ animal.age }} years old)</li>
+    {% empty %}
+        <li>No animals found matching your search.</li>
+    {% endfor %}
+</ul>
+{% endblock %}

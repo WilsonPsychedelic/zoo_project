@@ -1,0 +1,15 @@
+{% extends 'animals/base.html' %}
+
+{% block title %}{{ page_title }}{% endblock %}
+{% block heading %}{{ page_title }}{% endblock %}
+
+{% block content %}
+
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">{{ form_action }} Animal</button>
+</form>
+
+<p><a href="{% url 'animals:animal-list' %}">Cancel - Back to list</a></p>
+{% endblock %}
