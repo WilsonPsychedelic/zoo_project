@@ -1,4 +1,10 @@
+from django.contrib.auth.mixins import LoginRequiredMixin
+from django.contrib.auth import login
+from django.contrib.auth.forms import UserCreationForm
 from django.urls import reverse_lazy
+from django.views.generic.dates import (
+    ArchiveIndexView, TodayArchiveView
+)
 from django.views.generic import (
     TemplateView, ListView, DetailView, 
     CreateView, UpdateView, DeleteView, FormView,
@@ -6,6 +12,31 @@ from django.views.generic import (
 
 from animals.models import Animal
 from zoo_site.forms import AnimalSearchForm
+
+class SignUpView(CreateView):
+    """
+    Uses Django's built-in UserCreationForm (username + password × 2).
+    On successful registration the user is logged in immediately and
+    redirected to the home page — no separate login step required.
+
+    Extra context added:
+      - page_title: for the heading
+    """
+    form_class = UserCreationForm
+    template_name = 'registration/signup.html'
+    success_url = reverse_lazy('animals:home')
+
+    def form_valid(self, form):
+        # Save the form and get the user instance
+        user = form.save()
+        # Log the user in using the 'user' variable, not 'self.obj'
+        login(self.request, user)
+        return super().form_valid(form)
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['page_title'] = 'Create Account'
+        return context
 
 class HomeView(TemplateView):
     template_name = 'animals/home.html'
@@ -18,7 +49,7 @@ class HomeView(TemplateView):
         context['wild_count'] = Animal.objects.filter(born_in_captivity=False).count()
         return context
 
-class AnimalListView(ListView):
+class AnimalListView(LoginRequiredMixin, ListView):
     model = Animal
     template_name = 'animals/animal_list.html'
     context_object_name = 'animals' # rename object_list
@@ -32,7 +63,7 @@ class AnimalListView(ListView):
         context['total_count'] = Animal.objects.count()
         return context
     
-class AnimalDetailView(DetailView):
+class AnimalDetailView(LoginRequiredMixin, DetailView):
     model = Animal
     template_name = 'animals/animal_detail.html'
     context_object_name = 'animal'
@@ -56,7 +87,7 @@ class AnimalDetailView(DetailView):
             return 'Large'
         return 'Very Large'
     
-class AnimalCreateView(CreateView):
+class AnimalCreateView(LoginRequiredMixin, CreateView):
     model = Animal
     fields = ['name', 'age', 'weight', 'born_in_captivity']
     success_url = reverse_lazy('animals:animal-list')
@@ -67,7 +98,7 @@ class AnimalCreateView(CreateView):
         context['form_action'] = 'Create'
         return context
     
-class AnimalUpdateView(UpdateView):
+class AnimalUpdateView(LoginRequiredMixin, UpdateView):
     model = Animal
     fields = ['name', 'age', 'weight', 'born_in_captivity']
     template_name = 'animals/animal_form.html'
@@ -79,12 +110,12 @@ class AnimalUpdateView(UpdateView):
         context['form_action'] = 'Update'
         return context
     
-class AnimalDeleteView(DeleteView):
+class AnimalDeleteView(LoginRequiredMixin, DeleteView):
     model = Animal
     template_name = 'animals/animal_confirm_delete.html'
     success_url = reverse_lazy('animals:animal-list')
 
-class AnimalSearchView(ListView):
+class AnimalSearchView(LoginRequiredMixin, ListView):
     model = Animal
     template_name = 'animals/animal_search.html'
     context_object_name = 'animals'
@@ -135,3 +166,13 @@ class AnimalSearchView(ListView):
             context['search_performed'] = True
 
         return context
+    
+class AnimalArchiveIndexView(LoginRequiredMixin, ArchiveIndexView):
+    model = Animal
+    date_field = "date_added"  # Use whatever date field you have in your Animal model
+    context_object_name = "animal_list"
+
+class AnimalTodayArchiveView(TodayArchiveView):
+    queryset = Animal.objects.all()
+    date_field = "date_added"  # Ensure this matches your model field
+    allow_empty = True

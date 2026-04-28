@@ -1,0 +1,101 @@
+name,age,weight,born_in_captivity,date_added
+Aldabra Giant Tortoise,136,249.1,False,2018-01-01
+Meerkat,10,0.9,True,2018-01-11
+Secretary Bird,15,4.2,False,2018-06-13
+Red Wolf,12,35.1,True,2018-06-23
+Pygmy Hippopotamus,23,214.5,False,2018-08-19
+African Penguin,8,2.9,True,2018-08-25
+Thomson's Gazelle,4,22.2,True,2018-09-11
+Moose,3,270,False,2018-10-08
+Polar Bear,4,254.7,True,2018-10-09
+Gentoo Penguin,18,7.4,True,2018-11-23
+Dall Sheep,2,67.3,True,2018-12-29
+Serval,9,11.6,True,2019-01-29
+California Sea Lion,4,93.9,False,2019-02-01
+Humboldt Penguin,7,3.7,False,2019-04-24
+Rodrigues Fruit Bat,6,0.4,False,2019-06-14
+Prevost's Squirrel,2,0.3,True,2019-11-04
+Cheetah,8,52.4,True,2019-11-10
+Dwarf Mongoose,2,0.3,True,2019-11-16
+Sloth Bear,4,71.2,False,2019-12-01
+Gorilla,34,194.4,False,2019-12-10
+Chimpanzee,27,50.6,True,2020-01-05
+Greater Flamingo,6,2.0,True,2020-02-01
+Asian Small-Clawed Otter,3,2.1,False,2020-03-24
+Eclectus Parrot,23,0.5,False,2020-05-14
+Dhole,5,15.9,False,2020-06-10
+Amur Tiger,3,129.3,True,2020-06-14
+Colobus Monkey,10,10.1,False,2020-08-03
+Bornean Orangutan,21,50.0,True,2020-08-08
+Koala,7,8.8,True,2020-09-18
+Warthog,8,92.1,False,2020-09-28
+Gray Wolf,8,42.6,True,2020-10-19
+Arabian Oryx,1,65,False,2020-11-04
+Blue-Tongued Skink,15,0.5,True,2020-12-10
+Clouded Leopard,4,12.8,True,2020-12-11
+American Bison,10,595.7,False,2021-03-17
+Long-Tailed Chinchilla,2,0.4,False,2021-03-20
+Okapi,26,335.5,True,2021-04-16
+Lowland Tapir,13,201.8,True,2021-04-18
+African Lion,5,139.3,True,2021-04-23
+Red Kangaroo,6,37.8,True,2021-05-04
+Giant Anteater,8,27.3,False,2021-05-17
+Pronghorn Antelope,1,40.7,False,2021-05-19
+Dromedary Camel,22,624.4,True,2021-05-27
+Crocodile Monitor,3,10.5,True,2021-06-01
+Mountain Gorilla,40,197.6,False,2021-08-21
+Lemur,18,3.7,True,2021-09-09
+Eclectus Parrot II,21,0.5,True,2021-10-17
+Amur Leopard,7,52.9,True,2021-10-25
+Arctic Fox,2,3.5,True,2021-10-29
+Eastern Bongo,17,355.9,True,2021-12-18
+Sumatran Orangutan,45,90,True,2022-01-11
+Brown Bear,10,210.2,True,2022-01-30
+Fennec Fox,14,1.9,True,2022-02-15
+Red Panda,2,3.0,False,2022-03-15
+Grizzly Bear,2,150,False,2022-09-19
+Wolverine,8,16.9,True,2022-10-25
+African Elephant,43,4956.3,False,2022-11-26
+Golden Lion Tamarin,6,0.6,True,2022-11-29
+Mandrill II,15,32.9,True,2022-11-29
+Asian Elephant,21,3089.0,False,2022-12-18
+Capybara,6,56.4,False,2023-02-14
+North American River Otter,1,5.3,True,2023-02-20
+Indian Rhinoceros,17,1736.5,True,2023-04-27
+Pronghorn Antelope II,10,65,True,2023-05-31
+Sun Bear,19,51.6,True,2023-06-11
+Lar Gibbon,37,6.8,True,2023-06-30
+Black-Footed Ferret,4,0.9,True,2023-08-23
+Chinese Giant Salamander,29,32.8,True,2023-08-28
+Grant's Zebra,4,218.1,False,2023-09-08
+Andean Condor,65,13.7,False,2023-10-26
+Leopard,10,81.4,True,2023-11-12
+Nile Crocodile,27,358.5,True,2023-11-23
+Bonobo,24,44.2,False,2023-12-22
+Reticulated Python,13,99.0,False,2024-01-20
+Green Anaconda,30,81.6,False,2024-02-27
+Melagris Warthog,3,73.8,False,2024-03-21
+Bald Eagle,20,5.5,True,2024-03-27
+Tasmanian Devil,2,6.8,True,2024-03-28
+White Rhinoceros,18,1653.0,True,2024-05-18
+Komodo Dragon,13,59.9,True,2024-06-25
+Giant Panda,11,109.8,True,2024-08-30
+Siberian Crane,8,4.8,False,2024-09-19
+Black Rhinoceros,6,825.7,True,2024-09-28
+Common Hippopotamus,25,2252.5,False,2024-11-27
+Snow Leopard,6,28.8,False,2024-12-14
+Harpy Eagle,30,8.1,False,2024-12-29
+Royal Bengal Tiger,7,143.1,True,2025-01-16
+Wombat,3,22.8,False,2025-01-30
+Galapagos Tortoise,165,230.0,True,2025-02-12
+Jaguar,7,85.6,True,2025-02-20
+Giraffe,17,997.5,True,2025-03-14
+Hammerhead Shark,19,332.4,False,2025-05-08
+Dusky Leaf Monkey,20,9,True,2025-05-17
+Ocelot,2,8,False,2025-07-23
+Fossa,8,6.1,True,2025-08-28
+King Cobra,19,9,False,2025-09-03
+Loggerhead Sea Turtle,39,120.3,False,2025-10-08
+Ring-Tailed Lemur,10,3.4,True,2025-10-18
+Mandrill,8,19.2,False,2025-10-25
+Scarlet Macaw,24,1.3,False,2025-12-24

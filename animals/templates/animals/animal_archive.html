@@ -1,0 +1,12 @@
+{% extends 'animals/base.html' %}
+
+{% block content %}
+    <h2>Animal Archive</h2>
+    <ul>
+        {% for animal in animal_list %}
+            <li>{{ animal.name }} - Added on {{ animal.date_added|date:"F j, Y" }}</li>
+        {% empty %}
+            <li>No animals found in the archive.</li>
+        {% endfor %}
+    </ul>
+{% endblock %}

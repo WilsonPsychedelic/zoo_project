@@ -1,0 +1,14 @@
+{% extends 'animals/base.html' %}
+
+{% block content %}
+    <h2>Animals Added Today</h2>
+    <p>Date: {{ day|date:"F j, Y" }}</p>
+    <ul>
+        {% for animal in object_list %}
+            <li>{{ animal.name }} ({{ animal.age }} years old)</li>
+        {% empty %}
+            <li>No animals were added to the zoo today.</li>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'animals:animal-archive-index' %}">Back to Full Archive</a>
+{% endblock %}

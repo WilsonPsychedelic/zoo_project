@@ -4,6 +4,8 @@ from animals import views # Only if your HomeView is still in zoo_site/views.py
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+
+    path('accounts/', include('django.contrib.auth.urls')),
     
     # 1. The Homepage (handled by zoo_site views)
     path('', views.HomeView.as_view(), name='home'),

@@ -6,6 +6,7 @@ class Animal (models.Model):
     age = models.IntegerField(help_text="Age in years")
     weight = models.IntegerField(help_text="Weight in kilograms")
     born_in_captivity = models.BooleanField(default=False)
+    date_added = models.DateField()
 
 class Meta:
     ordering = ['name']
